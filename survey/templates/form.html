@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Hotel Reservation Form</h1>
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+        <div class="form-group">
+            <div><b>Personal Info</b></div>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="John" autofocus>
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="surname" name="surname" placeholder="Wick">
+        </div>
+        <div class="form-group">
+            <label for="email-address">Email Address</label>
+            <input type="email" class="form-control" id="email-address" name="email_address" placeholder="John.Wick@Continental.com">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone_number" placeholder="370 666 66666">
+        </div>
+        <div class="form-group">
+            <div><b>Accommodation</b></div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">Type of room required:</div>
+            <div class="option" name="type_of_room">
+                <input type="radio" class="form-group" id="radio1" name="radio1">
+                <label for="radio1" class="form-group">Single</label>
+                <input type="radio" class="form-group" id="radio2" name="radio2">
+                <label for="radio2" class="form-group">Double</label>
+            </div>
+            <div class="form-group">No. of nights:</div>
+            <input type="number" min="1" name="nights" class="form-group" placeholder="Choose">
+            <div class="form-group">Pets:</div>
+            <div class="option">
+                <input type="radio" class="form-group" id="radio3" name="pets">
+                <label for="radio3" class="form-group">Yes</label>
+                <input type="radio" class="form-group" id="radio4" name="pets">
+                <label for="radio4" class="form-group">No</label>
+                <input type="checkbox" class="form-group" id="check">
+                <label for="check" class="form-group">My dog is killed :/</label>
+            </div>
+            <div class="form-group"><b>Rooms</b></div>
+            <select class="form-group" name="rooms">
+                <option class="form-group" value="choose" selected disabled>Choose</option>
+                <option class="form-group" value="Basic-Hitman's-Suite">Basic Hitman's Suite</option>
+                <option class="form-group" value="Excommunicado">Excommunicado</option>
+                <option class="form-group" value="Continental's-Special">Continental's Special</option>
+            </select>
+        </div>
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input').value) {
+                alert('Fill all the blanks!');
+                return false;
+            }
+            return true;
+        };
+    </script>
+
+{% endblock %}

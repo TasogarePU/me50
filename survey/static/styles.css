@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://cdna.artstation.com/p/assets/images/images/018/082/176/4k/alex-nice-continental.jpg?1558336141);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.option > label {
+    margin-right: 50px;
+}
+
+.table {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tablerows {
+    border: solid 1px white;
+}
+
+.tabledata {
+    border: solid 1px white;
+    color: pink;
+}

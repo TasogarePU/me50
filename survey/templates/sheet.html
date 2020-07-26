@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table" id="data">
+        <tr class="tablerows">
+            <th class="tabledata">#</th>
+            <th class="tabledata">Name</th>
+            <th class="tabledata">Surname</th>
+            <th class="tabledata">Email Address</th>
+            <th class="tabledata">Phone Number</th>
+        </tr>
+        {% for i, (name, surname, email_address, phone_number) in data %}
+        <tr class="tablerows">
+            <th class="tabledata">{{ i }}</th>
+            <td class="tabledata">{{ name }}</td>
+            <td class="tabledata">{{ surname }}</td>
+            <td class="tabledata">{{ email_address }}</td>
+            <td class="tabledata">{{ phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script>
+        $(document).ready(function() {
+            $('data').DataTable( {
+                "order": [[ 3, "desc" ]]
+            });
+        });
+    </script>
+{% endblock %}
