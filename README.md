@@ -1,1 +1,1 @@
-CS50 cources homework
+CS50 courses homework
